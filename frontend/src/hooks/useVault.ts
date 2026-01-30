@@ -29,4 +29,19 @@ export function useVault() {
           description: `Depositing ${amount} USDCx to vault...`,
         });
 
+        // In production, this would call the Stacks contract
+        // For hackathon, simulate success
+        await new Promise((r) => setTimeout(r, 2000));
+
+        addToast({
+          type: "success",
+          title: "Deposit Successful",
+          description: `${amount} USDCx deposited to vault`,
+        });
+
+        // Refresh data
+        store.fetchVaultStats();
+        if (stxAddress) store.fetchUserPosition(stxAddress);
+      } catch (error) {
+
 }
