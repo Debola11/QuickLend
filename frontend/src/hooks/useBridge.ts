@@ -34,4 +34,9 @@ export function useBridge() {
         }
       );
 
+      store.setTxHash(result.ethTxHash);
+      store.setStacksTxHash(result.stxTxHash);
+      store.setStatus("complete");
+      store.setStep(5);
+
 }
