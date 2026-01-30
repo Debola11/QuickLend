@@ -85,4 +85,16 @@ export function useVault() {
     [stxAddress, store, addToast]
   );
 
+  return {
+    stats: store.stats,
+    position: store.position,
+    isLoadingStats: store.isLoadingStats,
+    isLoadingPosition: store.isLoadingPosition,
+    deposit,
+    withdraw,
+    refreshStats: store.fetchVaultStats,
+    refreshPosition: stxAddress
+      ? () => store.fetchUserPosition(stxAddress)
+      : undefined,
+  };
 }
