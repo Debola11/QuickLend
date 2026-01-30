@@ -43,5 +43,15 @@ export function useVault() {
         store.fetchVaultStats();
         if (stxAddress) store.fetchUserPosition(stxAddress);
       } catch (error) {
+        addToast({
+          type: "error",
+          title: "Deposit Failed",
+          description:
+            error instanceof Error ? error.message : "Unknown error",
+        });
+      }
+    },
+    [stxAddress, store, addToast]
+  );
 
 }
