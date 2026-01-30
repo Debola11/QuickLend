@@ -71,4 +71,18 @@ export function useVault() {
           description: `${amount} USDCx withdrawn from vault`,
         });
 
+        store.fetchVaultStats();
+        if (stxAddress) store.fetchUserPosition(stxAddress);
+      } catch (error) {
+        addToast({
+          type: "error",
+          title: "Withdrawal Failed",
+          description:
+            error instanceof Error ? error.message : "Unknown error",
+        });
+      }
+    },
+    [stxAddress, store, addToast]
+  );
+
 }
