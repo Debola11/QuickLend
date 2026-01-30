@@ -56,4 +56,15 @@ export function useBridge() {
     }
   }, [store, addToast]);
 
+  return {
+    amount: store.amount,
+    setAmount: store.setAmount,
+    status: store.status,
+    currentStep: store.currentStep,
+    steps: store.steps,
+    txHash: store.txHash,
+    error: store.error,
+    startBridge,
+    resetBridge: store.resetBridge,
+  };
 }
