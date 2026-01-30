@@ -15,4 +15,23 @@ export function useBridge() {
       return;
     }
 
+    store.setStatus("approving");
+    store.setStep(0);
+
+    try {
+      const result = await bridgeService.simulateBridge(
+        store.amount,
+        (step) => {
+          const statuses = [
+            "approving",
+            "depositing",
+            "attesting",
+            "minting",
+            "complete",
+          ] as const;
+          store.setStep(step);
+          store.setStatus(statuses[step] || "complete");
+        }
+      );
+
 }
