@@ -54,4 +54,13 @@ export function useVault() {
     [stxAddress, store, addToast]
   );
 
+  const withdraw = useCallback(
+    async (amount: string) => {
+      try {
+        addToast({
+          type: "info",
+          title: "Withdrawing",
+          description: `Withdrawing ${amount} USDCx from vault...`,
+        });
+
 }
