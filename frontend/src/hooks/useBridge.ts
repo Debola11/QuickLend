@@ -39,4 +39,14 @@ export function useBridge() {
       store.setStatus("complete");
       store.setStep(5);
 
+      addToast({
+        type: "success",
+        title: "Bridge Complete",
+        description: `Successfully bridged ${store.amount} USDC to USDCx`,
+      });
+    } catch (error) {
+      store.setError(
+        error instanceof Error ? error.message : "Bridge failed"
+      );
+
 }
