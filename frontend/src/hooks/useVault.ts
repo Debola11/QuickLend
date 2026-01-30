@@ -14,4 +14,19 @@ export function useVault() {
     store.fetchVaultStats();
   }, []);
 
+  useEffect(() => {
+    if (stxAddress) {
+      store.fetchUserPosition(stxAddress);
+    }
+  }, [stxAddress]);
+
+  const deposit = useCallback(
+    async (amount: string) => {
+      try {
+        addToast({
+          type: "info",
+          title: "Depositing",
+          description: `Depositing ${amount} USDCx to vault...`,
+        });
+
 }
