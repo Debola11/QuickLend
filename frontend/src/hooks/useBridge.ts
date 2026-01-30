@@ -48,5 +48,12 @@ export function useBridge() {
       store.setError(
         error instanceof Error ? error.message : "Bridge failed"
       );
+      addToast({
+        type: "error",
+        title: "Bridge Failed",
+        description: "An error occurred during the bridge process",
+      });
+    }
+  }, [store, addToast]);
 
 }
