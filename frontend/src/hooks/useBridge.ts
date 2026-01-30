@@ -4,3 +4,7 @@ import { useCallback } from "react";
 import { useBridgeStore } from "@/stores/useBridgeStore";
 import { bridgeService } from "@/services/bridge.service";
 import { useUIStore } from "@/stores/useUIStore";
+
+export function useBridge() {
+  const store = useBridgeStore();
+  const addToast = useUIStore((s) => s.addToast);
