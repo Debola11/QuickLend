@@ -63,4 +63,12 @@ export function useVault() {
           description: `Withdrawing ${amount} USDCx from vault...`,
         });
 
+        await new Promise((r) => setTimeout(r, 2000));
+
+        addToast({
+          type: "success",
+          title: "Withdrawal Successful",
+          description: `${amount} USDCx withdrawn from vault`,
+        });
+
 }
