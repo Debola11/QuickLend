@@ -10,3 +10,12 @@ interface AmountInputProps {
   error?: string;
   disabled?: boolean;
 }
+
+export function AmountInput({
+  value,
+  onChange,
+  maxAmount,
+  tokenSymbol,
+  error,
+  disabled,
+}: 
