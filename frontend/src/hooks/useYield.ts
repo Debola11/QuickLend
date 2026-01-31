@@ -19,4 +19,12 @@ export function useYield() {
     [currentAPY]
   );
 
+  const simulateDeposit = useCallback(
+    async (amount: string, duration: number) => {
+     
+    },
+    []
+  );
+
+
 }
