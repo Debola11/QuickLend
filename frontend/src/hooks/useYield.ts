@@ -21,7 +21,19 @@ export function useYield() {
 
   const simulateDeposit = useCallback(
     async (amount: string, duration: number) => {
-     
+      try {
+        const res = await fetch("/api/vault/simulate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ amount, duration }),
+        });
+        if (res.ok) {
+          return await res.json();
+        }
+        return null;
+      } catch {
+       
+      }
     },
     []
   );
