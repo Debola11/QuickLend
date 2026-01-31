@@ -18,4 +18,14 @@ export function AmountInput({
   tokenSymbol,
   error,
   disabled,
-}: 
+}: AmountInputProps) {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    // Allow only numbers and one decimal point
+    if (val === "" || /^\d*\.?\d*$/.test(val)) {
+      onChange(val);
+    }
+  };
+
+
+}
