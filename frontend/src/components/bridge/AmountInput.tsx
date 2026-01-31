@@ -52,3 +52,16 @@ export function AmountInput({
           disabled={disabled}
           className="flex-1 bg-transparent text-2xl font-semibold text-text-primary placeholder:text-text-muted focus:outline-none disabled:opacity-50"
         />
+        <div className="flex items-center gap-2">
+          {maxAmount && (
+            <button
+              onClick={handleMax}
+              className="rounded-lg bg-primary/10 px-2 py-1 text-xs font-medium text-primary hover:bg-primary/20 transition-colors"
+            >
+              MAX
+            </button>
+          )}
+        
+    </div>
+  );
+}
