@@ -26,5 +26,9 @@ export function useYield() {
     []
   );
 
-
+  return {
+    currentAPY,
+    calculateYield,
+    simulateDeposit,
+  };
 }
