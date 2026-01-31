@@ -33,4 +33,15 @@ export function AmountInput({
     }
   };
 
+  return (
+    <div>
+      <div
+        className={cn(
+          "flex items-center gap-2 rounded-xl bg-surface-light border border-border px-4 py-3",
+          "focus-within:ring-2 focus-within:ring-primary/50 focus-within:border-primary",
+          "transition-all duration-200",
+          error && "border-error focus-within:ring-error/50"
+        )}
+      >
+       
 }
