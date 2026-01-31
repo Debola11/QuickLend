@@ -11,4 +11,12 @@ export function useYield() {
     zestService.getCurrentAPY().then(setCurrentAPY);
   }, []);
 
+  const calculateYield = useCallback(
+    (principal: number, daysActive: number, apy?: number) => {
+      const rate = apy ?? currentAPY;
+      return (principal * (rate / 100) / 365) * daysActive;
+    },
+    [currentAPY]
+  );
+
 }
