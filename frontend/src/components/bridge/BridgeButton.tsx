@@ -18,3 +18,15 @@ const stateLabels: Record<BridgeButtonProps["state"], string> = {
   success: "Bridge Complete!",
   error: "Bridge Failed",
 };
+
+export function BridgeButton({
+  onClick,
+  state,
+  disabled,
+  amount,
+}: BridgeButtonProps) {
+  const isLoading = ["approving", "bridging", "waiting"].includes(state);
+  const isSuccess = state === "success";
+  const isError = state === "error";
+
+}
