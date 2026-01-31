@@ -27,5 +27,10 @@ export function AmountInput({
     }
   };
 
+  const handleMax = () => {
+    if (maxAmount) {
+      onChange(maxAmount);
+    }
+  };
 
 }
