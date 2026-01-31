@@ -32,7 +32,7 @@ export function useYield() {
         }
         return null;
       } catch {
-       
+        return null;
       }
     },
     []
