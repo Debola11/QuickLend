@@ -43,5 +43,12 @@ export function AmountInput({
           error && "border-error focus-within:ring-error/50"
         )}
       >
-       
-}
+        <input
+          type="text"
+          inputMode="decimal"
+          placeholder="0.00"
+          value={value}
+          onChange={handleChange}
+          disabled={disabled}
+          className="flex-1 bg-transparent text-2xl font-semibold text-text-primary placeholder:text-text-muted focus:outline-none disabled:opacity-50"
+        />
