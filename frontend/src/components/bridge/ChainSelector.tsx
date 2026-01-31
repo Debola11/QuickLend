@@ -15,6 +15,12 @@ export function ChainSelector({
   disabled,
 }: ChainSelectorProps) {
   return (
-   
+    <div
+      className={cn(
+        "flex items-center gap-3 rounded-xl bg-surface-light border border-border px-4 py-3",
+        disabled && "opacity-50"
+      )}
+    >
+      
   );
 }
