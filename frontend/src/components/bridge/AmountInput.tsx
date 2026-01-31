@@ -61,7 +61,8 @@ export function AmountInput({
               MAX
             </button>
           )}
-        
+          <span className="text-sm font-medium text-text-secondary">
+         className="mt-1.5 text-sm text-error">{error}</p>}
     </div>
   );
 }
