@@ -29,4 +29,26 @@ export function BridgeButton({
   const isSuccess = state === "success";
   const isError = state === "error";
 
+  return (
+    <Button
+      onClick={onClick}
+      disabled={disabled || isLoading}
+      isLoading={isLoading}
+      size="lg"
+      variant={isError ? "secondary" : "primary"}
+      className={`w-full ${isSuccess ? "bg-success hover:bg-success/90" : ""} ${isLoading ? "animate-pulse-glow" : ""}`}
+    >
+      {!isLoading && (
+        <>
+          {isSuccess && <Check className="mr-2 h-5 w-5" />}
+          {isError && <X className="mr-2 h-5 w-5" />}
+          {state === "idle" && <ArrowRightLeft className="mr-2 h-5 w-5" />}
+        </>
+      )}
+      {stateLabels[state]}
+      {state === "idle" && amount && parseFloat(amount) > 0 && (
+        <span className="ml-1 opacity-75">({amount} USDC)</span>
+      )}
+    </Button>
+  );
 }
