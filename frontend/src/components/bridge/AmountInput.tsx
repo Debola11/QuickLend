@@ -62,7 +62,16 @@ export function AmountInput({
             </button>
           )}
           <span className="text-sm font-medium text-text-secondary">
-         className="mt-1.5 text-sm text-error">{error}</p>}
+            {tokenSymbol}
+          </span>
+        </div>
+      </div>
+      {maxAmount && (
+        <p className="mt-1.5 text-xs text-text-muted">
+          Balance: {maxAmount} {tokenSymbol}
+        </p>
+      )}
+      {error && <p className="mt-1.5 text-sm text-error">{error}</p>}
     </div>
   );
 }
