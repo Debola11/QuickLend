@@ -21,6 +21,14 @@ export function ChainSelector({
         disabled && "opacity-50"
       )}
     >
+      <div
+        className={cn(
+          "flex h-10 w-10 items-center justify-center rounded-full",
+          selectedChain.name === "Ethereum"
+            ? "bg-secondary/20 text-secondary"
+            : "bg-primary/20 text-primary"
+        )}
+      >
       
   );
 }
