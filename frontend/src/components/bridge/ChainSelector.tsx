@@ -29,6 +29,10 @@ export function ChainSelector({
             : "bg-primary/20 text-primary"
         )}
       >
-      
+        <span className="text-lg font-bold">
+          {selectedChain.name === "Ethereum" ? "E" : "S"}
+        </span>
+      </div>
+     
   );
 }
