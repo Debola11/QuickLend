@@ -3,3 +3,9 @@
 import { cn } from "@/lib/utils";
 import type { Chain } from "@/types";
 
+interface ChainSelectorProps {
+  direction: "source" | "destination";
+  selectedChain: Chain;
+  disabled?: boolean;
+}
+
