@@ -33,6 +33,12 @@ export function ChainSelector({
           {selectedChain.name === "Ethereum" ? "E" : "S"}
         </span>
       </div>
-     
+      <div>
+        <p className="text-xs text-text-muted">{direction === "source" ? "From" : "To"}</p>
+        <p className="text-sm font-medium text-text-primary">
+          {selectedChain.name}
+        </p>
+      </div>
+    </div>
   );
 }
