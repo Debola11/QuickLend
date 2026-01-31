@@ -9,3 +9,10 @@ interface ChainSelectorProps {
   disabled?: boolean;
 }
 
+export function ChainSelector({
+  direction,
+  selectedChain,
+  disabled,
+}: 
+  );
+}
